@@ -2,19 +2,31 @@
 
 namespace MyAspNetCoreApp.Web.Controllers
 {
+    public class Product
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
     public class ExampleController : Controller
     {
         public IActionResult Index()
         {
-            ViewBag.name = "Asp.Net Core";
-            ViewData["version"] = "1.0";
-            ViewData["names"] = new List<string>() { "Alice", "Bob", "Charlie" };
-            ViewBag.person = new  { Id = 1, Name = "Ersin", Age = 23 };
+            var productList = new List<Product>
+            {
+                new Product { Id = 1, Name = "Pen" },
+                new Product { Id = 2, Name = "Book" },
+                new Product { Id = 3, Name = "Phone" }
+            };
 
-            return View();
+            return View(productList);
         }
 
         public IActionResult Index2()
+        {
+            return View();
+        }
+
+        public IActionResult Index3()
         {
             return RedirectToAction("Index", "Example");
         }
