@@ -7,32 +7,3 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-
-<div>@DateTime.Now.ToShortDateString()</div>
-
-@{
-    var dateToday = DateTime.Now.ToShortDateString();
-    var message = "Hello World!";
-    @: Today's date is: @dateToday
-    <div>Message is : @message</div>
-}
-
-@if (DateTime.Now.Hour < 12)
-{
-    <p>Good Morning!</p>
-}
-else
-{
-    <p>@alertMessage></p>
-    <p>Good Afternoon!</p>
-}
-
-@for (int i = 0; i < 5; i++)
-{
-    <p>Line number: @i</p>
-}
-
-@foreach (var item in Enumerable.Range(1,10))
-{
-    <p>Item number: @item</p>
-}
