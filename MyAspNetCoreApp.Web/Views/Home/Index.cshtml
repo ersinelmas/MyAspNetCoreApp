@@ -2,8 +2,28 @@
     ViewData["Title"] = "Home Page";
     var alertMessage = "This is an alert message!";
 }
+@section Styles {
+    <link rel="stylesheet" href="~/css/example.css" asp-append-version="true" />
+    <style>
+        h1 {
+            color: blue;
+        }
+    </style>
+}
+@section Scripts {
+    <script type="text/javascript">
+        // alert('Welcome to the page');
+        $(document).ready(function () {
+            console.log('Welcome to the page');
+        });
+    </script>
+}
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 >Welcome to my site</h1>
+    <h2>Hello World!</h2>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@* <partial name="_MenuPartialView"/>
+@await Html.PartialAsync("_MenuPartialView") *@
